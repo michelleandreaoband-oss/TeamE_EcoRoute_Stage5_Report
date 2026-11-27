@@ -92,4 +92,17 @@ Impact assessment: the CO2 reduction achieved by AI route optimisation cannot be
 Data required to close this section: emission factor per vehicle type (g CO2/km), load capacity per vehicle type (kg), and kilometres travelled per route before and after optimisation.
 
 ## 5. Open Issues (INSUFFICIENT_DATA)
-_To be consolidated after all sections are merged._
+Consolidated list of undocumented parameters from Sections 2–4. None of these values may be estimated; each must be supplied with a documented source and explicit project-team approval before EcoRoute moves to a pilot.
+
+| Open issue | Section | Owner |
+|---|---|---|
+| AI optimisation algorithm | 2 | Technical Expert 1 |
+| Objective function and optimisation weights | 2 | Technical Expert 1 |
+| Traffic data source | 2 | Technical Expert 1 |
+| Delivery time windows | 2 | Technical Expert 1 |
+| Operational cost parameters / cost model | 2 | Technical Expert 1 |
+| Retry limits (data correction, rescheduling, optimisation, delivery) and escalation rules | 3 | Technical Expert 1 |
+| Emission factor per vehicle type (g CO2/km) | 4 | Technical Expert 2 |
+| Load capacity per vehicle type (kg) | 2, 4 | Technical Expert 2 |
+| Typical use per vehicle type | 4 | Technical Expert 2 |
+| Baseline emissions per route (before/after optimisation) | 4 | Technical Expert 2 |
