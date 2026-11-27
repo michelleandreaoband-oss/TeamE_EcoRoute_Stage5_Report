@@ -10,7 +10,7 @@ Source: Stage 4 System Prompt v1.1 and Technical Report Draft v2.
 ## 1. Executive Summary
 EcoRoute is an AI-based route-planning system for last-mile e-commerce deliveries. It balances distance, delivery time, vehicle capacity and CO2 emissions across a mixed fleet of bicycles, scooters, motorcycles and vans. This report consolidates the Stage 3 workflow and the Stage 4 audit (System Prompt v1.1 and Technical Report Draft v2) into a single version-controlled document.
 
-Key results: the end-to-end workflow covers order validation, fleet availability, AI route optimisation, cost and emissions estimation, delivery execution and redelivery handling. The AI documentation prompt passed 3/3 adversarial red-teaming tests (roleplay override, indirect prompt injection and missing data) and never invented figures: every undocumented value is reported as INSUFFICIENT_DATA.
+Key results: the end-to-end workflow covers order validation, fleet availability, AI route optimisation, cost and emissions estimation, delivery execution and redelivery handling. The AI documentation prompt passed 3/3 adversarial red-teaming tests (roleplay override, indirect prompt injection and missing data) and did not generate unsupported figures during the tested scenarios; undocumented values are reported as INSUFFICIENT_DATA. These results apply only to the tested scenarios and do not guarantee complete security.
 
 Next step: the Technical Experts must supply the missing operational data listed in Section 5 (emission factors, vehicle capacities and cost model) before EcoRoute can move to a pilot.
 
@@ -21,14 +21,14 @@ _Pending – Issue #3 (Angel)_
 _Pending – Issue #4 (Angel)_
 
 ## 4. Emissions & Fleet Impact
-EcoRoute treats CO2 emissions as an optimisation criterion alongside distance, time and vehicle capacity. The workflow step Estimate Costs and Emissions runs before routes are confirmed, so vehicle allocation can favour lower-emission vehicles whenever capacity and time constraints allow.
+EcoRoute is designed to treat CO2 emissions as an optimisation criterion alongside distance, time and vehicle capacity. The workflow step Estimate Costs and Emissions runs before routes are confirmed. Favouring lower-emission vehicles whenever capacity and time constraints allow is an intended objective, not yet a verified system capability: the optimisation algorithm and objective function remain INSUFFICIENT_DATA.
 
 | Vehicle | Emission profile | Typical use | Emission factor (g CO2/km) | Load capacity |
 |---|---|---|---|---|
-| Bicycle | Zero tailpipe emissions | Short, dense urban routes | 0 (tailpipe) | INSUFFICIENT_DATA |
-| Scooter | Not specified (electric or combustion) | Light parcels, short distances | INSUFFICIENT_DATA | INSUFFICIENT_DATA |
-| Motorcycle | Combustion engine | Medium distances, small loads | INSUFFICIENT_DATA | INSUFFICIENT_DATA |
-| Van | Not specified (electric or combustion) | Bulky loads, longer routes | INSUFFICIENT_DATA | INSUFFICIENT_DATA |
+| Bicycle | Human-powered (no engine) | To be verified | INSUFFICIENT_DATA | INSUFFICIENT_DATA |
+| Scooter | Not specified (electric or combustion) | To be verified | INSUFFICIENT_DATA | INSUFFICIENT_DATA |
+| Motorcycle | Not specified | To be verified | INSUFFICIENT_DATA | INSUFFICIENT_DATA |
+| Van | Not specified (electric or combustion) | To be verified | INSUFFICIENT_DATA | INSUFFICIENT_DATA |
 
 Impact assessment: the CO2 reduction achieved by AI route optimisation cannot be quantified yet. INSUFFICIENT_DATA: baseline emissions per route and emission factor per vehicle type. In line with the Stage 4 anti-hallucination protocol, no estimated or industry-average values are used.
 
